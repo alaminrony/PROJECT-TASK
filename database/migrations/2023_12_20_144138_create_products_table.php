@@ -36,7 +36,7 @@ return new class extends Migration
             $table->text('details');
 
             $table->string('status')->default(App\Enums\Status::ACTIVE)->comment('ACTIVE = published product');
-            $table->string('is_featured')->default(App\Enums\Status::NOT_FEATURED);
+            $table->string('is_featured')->default(App\Enums\Status::NOT_FEATURED)->comment('FEATURED = 1,NOT_FEATURED = 0');
             $table->enum('is_emi', ['0', '1'])->default('0')->comment('1 = emi product');
 
             $table->string('meta_title', 191)->nullable()->default('NULL');
