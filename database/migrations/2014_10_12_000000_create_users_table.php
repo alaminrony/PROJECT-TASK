@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('full_name');
             $table->enum('user_type',['admin','seller','customer']);
-            $table->string('phone', 25);
-            $table->string('email', 80)->nullable()->default('NULL');
+            $table->string('phone', 25)->unique();
+            $table->string('email', 80)->unique()->nullable()->default('NULL');
             $table->timestamp('email_verified_at')->nullable()->comment('null = not verified');
             $table->string('password');
 
@@ -42,7 +42,7 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['full_name','phone','email']);
+            $table->index(['full_name']);
         });
     }
 

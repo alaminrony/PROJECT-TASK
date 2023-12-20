@@ -20,6 +20,10 @@ return new class extends Migration
 
             $table->string('meta_title');
             $table->string('meta_description');
+
+            $table->unsignedBigInteger('image_id')->nullable();
+            $table->foreign('image_id')->references('id')->on('uploads')->onDelete('set null');
+
             $table->timestamps();
             $table->foreign('parent_id')->references('id')->on('categories')->onDelete('cascade');
 
