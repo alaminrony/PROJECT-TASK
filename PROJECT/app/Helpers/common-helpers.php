@@ -38,19 +38,4 @@ function ___($key = null, $replace = [], $locale = null)
 }
 
 
-if (!function_exists('s3Upload')) {
-    function s3Upload($directory, $file)
-    {
-        $directory = 'public/' . $directory;
-        return Storage::disk('s3')->put($directory, $file, 'public');
-    }
-}
-
-if (!function_exists('s3ObjectCheck')) {
-    function s3ObjectCheck($path)
-    {
-        return Storage::disk('s3')->exists($path);
-    }
-}
-
 

@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UserRepository implements UserInterface
 {
-    use CommonHelperTrait, ApiReturnFormatTrait, FileUploadTrait;
+    use  ApiReturnFormatTrait, FileUploadTrait;
 
     private User $model;
 
