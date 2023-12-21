@@ -43,10 +43,7 @@ return new class extends Migration
             $table->index('payment_status');
             $table->index('order_status');
 
-
-
             $table->timestamps();
-
             $table->softDeletes();
         });
     }
