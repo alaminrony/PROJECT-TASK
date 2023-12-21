@@ -38,6 +38,8 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id')->nullable();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('set null');
 
+            $table->string('status')->default(App\Enums\Status::ACTIVE)->comment('ACTIVE = 1');
+
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

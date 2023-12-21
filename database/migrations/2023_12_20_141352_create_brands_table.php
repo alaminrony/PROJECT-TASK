@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedBigInteger('image_id')->nullable();
             $table->foreign('image_id')->references('id')->on('uploads')->onDelete('set null');
+            $table->string('status')->default(App\Enums\Status::ACTIVE)->comment('ACTIVE = 1');
             $table->softDeletes();
             $table->index('name');
         });

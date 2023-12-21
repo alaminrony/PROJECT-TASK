@@ -27,6 +27,8 @@ return new class extends Migration
             $table->timestamps();
             $table->foreign('parent_id')->references('id')->on('categories')->onDelete('cascade');
 
+            $table->string('status')->default(App\Enums\Status::ACTIVE)->comment('ACTIVE = 1');
+
             $table->softDeletes();
             $table->index('name');
         });
